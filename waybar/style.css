@@ -1,0 +1,37 @@
+@define-color bg-dark     #292C3D;
+@define-color gold-sun    #FED49B;
+@define-color amber-glow  #E59B5C;
+@define-color text-light  #FBF7F0;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "Helvetica", sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#workspaces, #mpris, #clock, #wireplumber, #cpu, #memory, #network, #tray {
+    margin: 1rem .25rem;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    background-color: @bg-dark;
+    color: @gold-sun;
+}
+
+#workspaces {
+    padding: 0;
+}
+
+#workspaces button {
+    color: @gold-sun;
+    border-radius: 10px;
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#workspaces button.active {
+    color: @text-light;
+    background-color: @amber-glow;
+}
