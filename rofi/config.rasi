@@ -1,0 +1,113 @@
+configuration {
+    modi:                       "drun";
+    show-icons:                 true;
+    display-drun:               "🔍";
+    drun-display-format:        "{name}";
+    font:                       "JetBrainsMono Nerd Font 12";
+}
+
+* {
+    bg-dark:     rgba(41, 44, 61, 0.85);
+    gold-sun:    #FED49B;
+    amber-glow:  #E59B5C;
+    text-light:  #FBF7F0;
+    text-muted:  rgba(251, 247, 240, 0.4);
+    
+    background-color:            transparent;
+    text-color:                  @gold-sun;
+}
+
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       500px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    enabled:                     true;
+    border-radius:               10px;
+    background-color:            @bg-dark;
+    cursor:                      "default";
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     15px;
+    background-color:            transparent;
+    text-color:                  @text-light;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @amber-glow;
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @text-light;
+    cursor:                      text;
+    placeholder:                 "Search...";
+    placeholder-color:           @text-muted;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       6;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     5px;
+    margin:                      0px;
+    padding:                     10px;
+    background-color:            transparent;
+}
+
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     8px 12px;
+    border-radius:               10px;
+    background-color:            transparent;
+    text-color:                  @gold-sun;
+    cursor:                      pointer;
+}
+
+element selected.normal {
+    background-color:            @amber-glow;
+    text-color:                  @text-light;
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        24px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
