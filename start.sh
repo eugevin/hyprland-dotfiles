@@ -23,4 +23,4 @@ echo "Linking configurations..."
 rm -rf ~/.config/hypr && ln -sf ~/.dotfiles/hypr ~/.config/hypr
 rm -rf ~/.config/waybar && ln -sf ~/.dotfiles/waybar ~/.config/waybar
 rm -rf ~/.config/rofi && ln -sf ~/.dotfiles/rofi ~/.config/rofi
-rm -rf ~/.config/dunst && ln -sf ~/.dotfiles/dunst ~/.config/dunst
+#rm -rf ~/.config/dunst && ln -sf ~/.dotfiles/dunst ~/.config/dunst
