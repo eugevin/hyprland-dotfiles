@@ -3,8 +3,11 @@ set -e
 
 echo "--- Starting System Setup ---"
 
-echo "Updating system and installing dependencies..."
-sudo pacman -Syu --needed git less base-devel
+echo "Updating and upgrading the system..."
+sudo pacman -Syu
+
+echo "Installing dependencies..."
+sudo pacman -S --needed git less base-devel
 
 echo "Installing core components..."
 sudo pacman -S --needed firefox kitty ghostty dolphin \
