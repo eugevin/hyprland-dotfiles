@@ -13,7 +13,7 @@ window#waybar {
     background-color: transparent;
 }
 
-#workspaces, #mpris, #clock, #wireplumber, #cpu, #memory, #network, #tray {
+#workspaces, #mpris, #clock, #language, #wireplumber, #cpu, #memory, #network, #tray {
     margin: 1rem .25rem;
     padding: .5rem 1rem;
     border-radius: 10px;

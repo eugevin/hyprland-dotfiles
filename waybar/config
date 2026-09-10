@@ -6,6 +6,8 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
+    "margin-left": 16,
+    "margin-right": 16,
     "modules-left": [
 	    "hyprland/workspaces",
 	    "mpris"
@@ -14,6 +16,7 @@
 	    "clock"
     ],
     "modules-right": [
+	    "hyprland/language",
 	    "wireplumber",
 	    "cpu",
 	    "memory",
@@ -34,6 +37,11 @@
 		    "paused": "   "
 	    },
 	    "on-click": "playerctl play-pause"
+    },
+    "hyprland/language": {
+	    "format": "{}",
+    	    "format-en": "us",
+    	    "format-ru": "ru"
     },
     "clock": {
 	    "format": "{:%m.%d | %H:%M}"
@@ -58,5 +66,9 @@
 	    "format-wifi": "  {essid}",
 	    "format-ethernet": "  {ifname}",
 	    "format-disconnected": "󰌙  No connection"
+    },
+    "tray": {
+	    "icon-size": 16,
+	    "spacing": 8
     }
 }
