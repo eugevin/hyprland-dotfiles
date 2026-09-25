@@ -11,10 +11,11 @@ sudo pacman -S --needed git less base-devel
 
 echo "Installing core components..."
 sudo pacman -S --needed firefox kitty ghostty dolphin \
-	hyprland hyprpolkitagent hyprpaper quickshell rofi xdg-desktop-portal-hyprland wl-clipboard \
-	pipewire wireplumber pipewire-pulse pavucontrol \
-	grim slurp \
-	ttf-iosevka-nerd otf-font-awesome noto-fonts-cjk
+  hyprland hyprpolkitagent hyprpaper quickshell rofi xdg-desktop-portal-hyprland wl-clipboard \
+  pipewire wireplumber pipewire-pulse pavucontrol \
+  grim slurp \
+  mpv gwenview \
+  ttf-iosevka-nerd otf-font-awesome noto-fonts-cjk
 
 echo "Configuring audio services..."
 systemctl --user enable --now pipewire.service pipewire-pulse.service wireplumber.service
