@@ -1,5 +1,5 @@
 local env = require("lua.env")
-local mainMod = "ALT" -- Sets "Windows" key as main modifier
+local mainMod = env.mainMod
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(env.terminal))
