@@ -27,3 +27,4 @@ echo "Linking configurations..."
 rm -rf ~/.config/hypr && ln -sf ~/.dotfiles/hypr ~/.config/hypr
 rm -rf ~/.config/rofi && ln -sf ~/.dotfiles/rofi ~/.config/rofi
 rm -rf ~/.config/quickshell && ln -sf ~/.dotfiles/quickshell ~/.config/quickshell
+rm -rf ~/.config/ghostty && ln -sf ~/.dotfiles/ghostty ~/.config/ghostty
