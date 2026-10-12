@@ -27,11 +27,11 @@ ShellRoot {
       Widgets.Workspaces {}
     }
 
-    // Clock
-    Widgets.Simple {
-      command: ["date", "+%m.%d | %H:%M"]
-      interval: 1000
+    // Single morph shape shared by all Expandables
+    Widgets.MorphHost {}
 
+    // Clock (hover for calendar and power menu)
+    Widgets.Clock {
       anchors.centerIn: parent
     }
 
