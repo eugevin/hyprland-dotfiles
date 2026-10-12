@@ -48,10 +48,8 @@ ShellRoot {
       }
 
       // Audio
-      Widgets.Simple {
-        icon: ""
-        command: ["sh", "-c", "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{ if ($3 == \"[MUTED]\") print \"Muted\"; else print int($2 * 100)\"%\" }'"]
-        interval: 1000
+      Widgets.Audio {
+        icon: "\uf485"
       }
 
       // CPU
