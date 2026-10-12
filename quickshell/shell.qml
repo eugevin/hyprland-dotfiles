@@ -42,10 +42,7 @@ ShellRoot {
       spacing: Shared.margin / 2
 
       // Lang
-      Widgets.Simple {
-        command: ["sh", "-c", "hyprctl devices | awk '/active keymap:/ {layout=$3} /main: yes/ {print layout; exit}' | cut -c1-2 | tr 'A-Z' 'a-z'"]
-        interval: 200
-      }
+      Widgets.Lang {}
 
       // Audio
       Widgets.Audio {
