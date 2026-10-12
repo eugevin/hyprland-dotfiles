@@ -18,7 +18,7 @@ ShellRoot {
     margins.left: Shared.margin
     margins.right: Shared.margin
 
-    height: Shared.margin * 2
+    implicitHeight: Shared.margin * 2
     color: "transparent"
 
     Row {
