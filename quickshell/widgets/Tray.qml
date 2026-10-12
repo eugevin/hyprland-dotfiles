@@ -27,12 +27,28 @@ Item {
     Repeater {
       model: SystemTray.items
 
+      // Click opens the app (or its menu, if the app only has a menu)
       MouseArea {
         id: itemArea
 
         width: 20
         height: 20
-        
+
+        cursorShape: Qt.PointingHandCursor
+
+        function openMenu() {
+          // Under the tray pill, aligned with the icon
+          const content = QsWindow.window.contentItem
+          const x = content.mapFromItem(itemArea, 0, 0).x
+          const y = content.mapFromItem(root, 0, root.height).y
+          modelData.display(QsWindow.window, x, y)
+        }
+
+        onClicked: {
+          if (modelData.onlyMenu) openMenu()
+          else modelData.activate()
+        }
+
         IconImage {
           anchors.fill: parent
           source: modelData.icon
