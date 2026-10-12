@@ -36,14 +36,14 @@ Expandable {
 
       PowerButton {
         id: shutdownButton
-        icon: ""
+        icon: "\uf011"
         label: "Shutdown"
         command: ["systemctl", "poweroff"]
       }
 
       PowerButton {
         id: rebootButton
-        icon: ""
+        icon: "\uf01e"
         label: "Reboot"
         command: ["systemctl", "reboot"]
       }

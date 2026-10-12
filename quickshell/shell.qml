@@ -34,7 +34,15 @@ ShellRoot {
 
     // Clock (hover for calendar and power menu)
     Widgets.Clock {
+      id: clock
       anchors.centerIn: parent
+    }
+
+    // Notification history, right next to the clock
+    Widgets.NotificationCenter {
+      anchors.verticalCenter: parent.verticalCenter
+      anchors.left: clock.right
+      anchors.leftMargin: Shared.margin / 2
     }
 
     Row {
@@ -65,4 +73,7 @@ ShellRoot {
       Widgets.Tray {}
     }
   }
+
+  // Notification toasts, top-right under the bar
+  Widgets.Toasts {}
 }
