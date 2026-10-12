@@ -55,17 +55,13 @@ ShellRoot {
       }
 
       // CPU
-      Widgets.Simple {
-        icon: ""
-        command: ["sh", "-c", "top -bn2 -d 0.5 | awk '/^%Cpu/ {us=$2; sy=$4} END {print int(us + sy)\"%\"}'"]
-        interval: 5000
+      Widgets.Cpu {
+        icon: "\uf4bc"
       }
 
       // Memory
-      Widgets.Simple {
-        icon: ""
-        command: ["awk", '/^MemTotal:/ { t=$2 } /^MemAvailable:/ { a=$2 } END { printf "%.1fG / %.1fG", (t-a)/1024/1024, t/1024/1024 }', "/proc/meminfo"]
-        interval: 5000
+      Widgets.Memory {
+        icon: "\uefc5"
       }
 
       // Tray
