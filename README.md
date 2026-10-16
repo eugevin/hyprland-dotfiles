@@ -1,5 +1,7 @@
 # Hyprland Setup
 
+![preview](preview.jpg)
+
 One script does it all: system upgrade, Hyprland stack, dotfiles, configs.
 
 ```bash
