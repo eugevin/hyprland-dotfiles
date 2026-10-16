@@ -33,3 +33,13 @@ hl.window_rule({
 for i = 1, 5 do
   hl.workspace_rule({ workspace = i, persistent = true })
 end
+
+hl.layer_rule({
+    -- Frosted glass under the Quickshell island and its pills. ignore_alpha keeps the soft
+    -- shadows around them out of the blur
+    name         = "island-blur",
+    match        = { namespace = "^island$" },
+
+    blur         = true,
+    ignore_alpha = 0.5,
+})

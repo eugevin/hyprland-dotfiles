@@ -4,8 +4,8 @@ import Quickshell
 import Quickshell.Services.Notifications
 import QtQuick
 
-// Notification daemon (replaces dunst). Every notification stays in the history until dismissed;
-// new ones are also queued in `popups` for the toasts.
+// Notification daemon. Every notification stays in the history until dismissed;
+// new ones are also queued in `popups` for the toasts on the right.
 Singleton {
   id: root
 
@@ -16,8 +16,10 @@ Singleton {
   property var times: ({})
   property var byId: ({})
 
-  // Toasts on screen, newest first; entries are { nid }
+  // Toasts on screen, newest first; entries are { nid }. A ListModel, so the toasts already on
+  // screen keep their delegates (timers, animations) when one is added or removed
   property ListModel popups: ListModel {}
+  property int maxPopups: 4
 
   function removePopup(id) {
     for (let i = 0; i < popups.count; i++) {
@@ -71,7 +73,12 @@ Singleton {
 
       root.times[id] = new Date()
       root.byId[id] = notification
-      root.popups.insert(0, { nid: id })
+
+      // Carried over from before a reload: already seen, don't pop it up again
+      if (!notification.lastGeneration) {
+        root.popups.insert(0, { nid: id })
+        if (root.popups.count > root.maxPopups) root.popups.remove(root.maxPopups, root.popups.count - root.maxPopups)
+      }
 
       notification.closed.connect(() => {
         root.removePopup(id)

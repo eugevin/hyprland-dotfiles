@@ -1,38 +1,38 @@
 import Quickshell
 import QtQuick
 
-import "../shared.js" as Shared
+import "../theme.js" as Theme
 
-// First click arms the button, second click within 3s runs the command
+// Round icon button. First click arms it (terracotta, icon turns into a check), a second click
+// within 3 s runs the command
 Rectangle {
   id: root
 
   property string icon: ""
-  property string label: ""
   property var command: []
   property bool armed: false
 
   property bool active: hover.hovered || armed
 
-  width: Math.ceil(metrics.width) + 24
-  height: Math.ceil(buttonText.height) + 12
+  width: 48
+  height: 48
 
-  radius: Shared.radius
+  radius: height / 2
   // Armed = next click shuts down/reboots, so it gets the danger color, not the hover one
-  color: armed ? Shared.colors.danger : active ? Shared.colors.bgActive : Shared.colors.track
+  color: armed ? Theme.colors.danger : active ? Theme.colors.accent : Theme.colors.surface
 
-  TextMetrics {
-    id: metrics
-    font: buttonText.font
-    text: `${root.icon}  ${root.label}`
+  Behavior on color {
+    ColorAnimation { duration: Theme.duration / 2 }
   }
 
-  DetailText {
-    id: buttonText
+  Text {
     anchors.centerIn: parent
 
-    text: `${root.icon}  ${root.armed ? "Sure?" : root.label}`
-    color: root.active ? Shared.colors.textWhite : Shared.colors.text
+    text: root.armed ? "\uf00c" : root.icon
+
+    font.family: Theme.font.family
+    font.pixelSize: 20
+    color: root.active ? Theme.colors.onAccent : Theme.colors.text
   }
 
   HoverHandler {

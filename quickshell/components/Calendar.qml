@@ -1,6 +1,6 @@
 import QtQuick
 
-import "../shared.js" as Shared
+import "../theme.js" as Theme
 
 // Month grid for the given date, weeks start on Monday, today highlighted
 Grid {
@@ -24,8 +24,8 @@ Grid {
     model: ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
 
     Item {
-      width: 32
-      height: 26
+      width: 36
+      height: 30
 
       DetailText {
         anchors.centerIn: parent
@@ -42,16 +42,16 @@ Grid {
       property int day: index - root.offset + 1
       property bool isToday: day === root.today
 
-      width: 32
-      height: 26
+      width: 36
+      height: 30
 
-      radius: Shared.radius / 2
-      color: isToday ? Shared.colors.bgActive : "transparent"
+      radius: height / 2
+      color: isToday ? Theme.colors.accent : "transparent"
 
       DetailText {
         anchors.centerIn: parent
         text: day > 0 ? day : ""
-        color: isToday ? Shared.colors.textWhite : Shared.colors.text
+        color: isToday ? Theme.colors.onAccent : Theme.colors.text
       }
     }
   }
