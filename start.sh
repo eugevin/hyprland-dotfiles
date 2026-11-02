@@ -15,7 +15,7 @@ sudo pacman -S --needed firefox kitty ghostty dolphin \
   pipewire wireplumber pipewire-pulse pavucontrol \
   grim slurp \
   mpv gwenview \
-  ttf-iosevka-nerd otf-font-awesome noto-fonts-cjk
+  ttf-ibmplex-mono-nerd otf-font-awesome noto-fonts-cjk
 
 echo "Configuring audio services..."
 systemctl --user enable --now pipewire.service pipewire-pulse.service wireplumber.service

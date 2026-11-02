@@ -172,6 +172,9 @@ Activity {
 
           DetailText {
             anchors.verticalCenter: parent.verticalCenter
+            // row width minus the left inset, icon, spacing and a matching right inset
+            width: row.width - 58
+            elide: Text.ElideRight
             text: modelData.name
             color: row.current ? Theme.colors.onAccent : Theme.colors.text
           }

@@ -2,11 +2,11 @@
 // Smoky olive-black glass, the gold of the mist as the accent, cream text.
 
 const font = {
-  family: "Iosevka Nerd Font",
+  family: "BlexMono Nerd Font",
   size: 16,
   sizeSmall: 14,
-  weight: 600,
-  weightBold: 800,
+  weight: 500,
+  weightBold: 600,
 }
 
 const colors = {
